@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Discover the Depth of Isha Hatha Yoga</title>
+    <meta name="description" content="A clean, Notion-style static page introducing the depth and practices of Isha Hatha Yoga." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg: #ffffff;
+        --text: #2f3437;
+        --heading: #111111;
+        --muted: #6b6f76;
+        --link: #2f76d2;
+        --border: #e6e6e6;
+        --callout-bg: #f6f8fa;
+        --code-bg: #f6f7f9;
+        --quote-border: #e2e4e8;
+        --pill-bg: #f1f5ff;
+        --pill-text: #2f5fb3;
+      }
+      * { box-sizing: border-box; }
+      html, body {
+        margin: 0;
+        padding: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Noto Sans", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        line-height: 1.7;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .page {
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 48px 24px 96px;
+      }
+      header.page-header {
+        margin-bottom: 24px;
+      }
+      .breadcrumb {
+        font-size: 12px;
+        color: var(--muted);
+        display: flex;
+        gap: 6px;
+        align-items: center;
+      }
+      .breadcrumb a {
+        color: var(--muted);
+        text-decoration: none;
+      }
+      .breadcrumb a:hover { text-decoration: underline; }
+      .title {
+        margin-top: 8px;
+      }
+      h1 {
+        margin: 0;
+        font-size: 42px;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        color: var(--heading);
+      }
+      .subtitle {
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .pill {
+        display: inline-block;
+        padding: 4px 10px;
+        border-radius: 999px;
+        font-size: 12px;
+        background: var(--pill-bg);
+        color: var(--pill-text);
+        margin-right: 10px;
+      }
+      .hero {
+        margin: 28px 0 12px;
+        border-radius: 8px;
+        overflow: hidden;
+        border: 1px solid var(--border);
+      }
+      .hero img {
+        width: 100%;
+        display: block;
+      }
+      .caption {
+        text-align: center;
+        color: var(--muted);
+        font-size: 12px;
+        margin-top: 8px;
+      }
+      .toc {
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 14px 16px;
+        background: #fff;
+        margin: 24px 0 8px;
+      }
+      .toc .toc-title {
+        font-weight: 600;
+        font-size: 13px;
+        margin-bottom: 8px;
+        color: var(--heading);
+      }
+      .toc ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .toc li {
+        padding: 4px 0;
+        font-size: 14px;
+      }
+      .toc a {
+        color: var(--link);
+        text-decoration: none;
+      }
+      .toc a:hover { text-decoration: underline; }
+      article {
+        margin-top: 8px;
+      }
+      h2 {
+        margin: 34px 0 8px;
+        font-size: 28px;
+        line-height: 1.25;
+        letter-spacing: -0.01em;
+        color: var(--heading);
+      }
+      h3 {
+        margin: 24px 0 8px;
+        font-size: 20px;
+        color: var(--heading);
+      }
+      p {
+        margin: 10px 0 16px;
+        font-size: 16px;
+      }
+      a { color: var(--link); }
+      hr.divider {
+        height: 1px;
+        border: none;
+        background: var(--border);
+        margin: 28px 0;
+      }
+      .callout {
+        display: grid;
+        grid-template-columns: 28px 1fr;
+        gap: 12px;
+        padding: 14px 16px;
+        background: var(--callout-bg);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        margin: 18px 0;
+      }
+      .callout-emoji {
+        font-size: 20px;
+        line-height: 1.2;
+      }
+      blockquote {
+        margin: 18px 0;
+        padding: 0 0 0 16px;
+        border-left: 3px solid var(--quote-border);
+        color: #44484c;
+      }
+      code, pre {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        background: var(--code-bg);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        font-size: 85%;
+      }
+      code { padding: 2px 6px; }
+      pre {
+        padding: 12px 14px;
+        overflow: auto;
+      }
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin: 10px 0 6px;
+      }
+      .gallery img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+      }
+      /* Carousel */
+      .carousel {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        touch-action: pan-y;
+        background: #fff;
+        margin: 10px 0 6px;
+      }
+      .carousel-track {
+        display: flex;
+        align-items: stretch;
+        transition: transform 320ms ease;
+        will-change: transform;
+      }
+      .carousel-slide {
+        min-width: 100%;
+        padding: 0;
+      }
+      .carousel-slide img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        display: block;
+      }
+      .carousel-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0,0,0,0.45);
+        color: #fff;
+        border: none;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        z-index: 2;
+      }
+      .carousel-button:hover { background: rgba(0,0,0,0.6); }
+      .carousel-button.prev { left: 8px; }
+      .carousel-button.next { right: 8px; }
+      @media (max-width: 720px) {
+        .carousel-slide img { height: 220px; }
+      }
+      .checklist {
+        list-style: none;
+        padding: 0;
+        margin: 10px 0 14px;
+      }
+      .checklist li {
+        display: grid;
+        grid-template-columns: 22px 1fr;
+        gap: 10px;
+        align-items: start;
+        padding: 6px 0;
+      }
+      .checkbox {
+        display: inline-flex;
+        width: 16px;
+        height: 16px;
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2px;
+      }
+      .checkbox.checked {
+        background: #2ecc71;
+        border-color: #2ecc71;
+        color: white;
+        font-size: 12px;
+      }
+      details {
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 10px 12px;
+        margin: 12px 0;
+        background: #fff;
+      }
+      details summary {
+        cursor: pointer;
+        font-weight: 600;
+        list-style: none;
+      }
+      details[open] { padding-bottom: 12px; }
+      footer.page-footer {
+        margin-top: 40px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      @media (max-width: 720px) {
+        .page { padding: 28px 18px 72px; }
+        h1 { font-size: 34px; }
+        h2 { font-size: 24px; }
+        .gallery { grid-template-columns: 1fr 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page" role="main">
+      <header class="page-header" aria-label="Page header">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="#">Home</a>
+          <span>›</span>
+          <a href="#">Practice</a>
+          <span>›</span>
+          <span aria-current="page">Isha Hatha Yoga</span>
+        </nav>
+        <div class="title">
+          <span class="pill">Article</span>
+          <h1>Discover the Depth of Isha Hatha Yoga</h1>
+          <div class="subtitle">By Sadhguru Gurukulam</div>
+        </div>
+        <figure class="hero">
+          <img src="https://i.postimg.cc/KjTQjdrm/Hytt_updated.jpg" 
+          alt="Isha Hatha Yoga" />
+        </figure>
+        <div class="caption"></div>
+      </header>
+
+      <section class="toc" aria-label="Table of contents">
+        <div class="toc-title">Table of contents</div>
+        <ul>
+          <!-- <li><a href="#overview">Overview</a></li> -->
+          <li><a href="#what-is">What is Classical Hatha Yoga?</a></li>
+          <!-- li><a href="#practices">Core practices</a></li -->
+          <!-- li><a href="#benefits">Benefits</a></li -->
+          <li><a href="#start">Ready to Learn Hatha Yoga?</a></li>
+          <li><a href="#hytt">Inspired to Offer Yoga to the World?</a></li>
+          <li><a href="#nextsteps">Take the Next Step</a></li>
+        
+        </ul>
+      </section>
+
+      <article>
+        <!-- section id="overview" aria-labelledby="overview-heading">
+          <h2 id="overview-heading">Overview</h2>
+          <p>
+            This page presents a clean, Notion‑inspired reading experience for an introduction
+            to Isha Hatha Yoga. It focuses on clear typography, generous spacing, and simple
+            components like callouts, image galleries, and checklists.
+          </p>
+          <div class="callout" role="note" aria-label="Callout">
+            <div class="callout-emoji" aria-hidden="true">💡</div>
+            <div>
+              <strong>Tip:</strong> Use this file as a starting template. Replace headings, copy,
+              and images to match your content while keeping the visual style consistent.
+            </div>
+          </div>
+        </section -->
+
+        <section id="what-is" aria-labelledby="what-is-heading">
+          <h2 id="what-is-heading">What is Classical Hatha Yoga?</h2>
+          <p>
+            Classical Hatha Yoga programs are an unparalleled opportunity to learn classical hatha yoga in its full depth and vibrancy. 
+            The programs are conducted by highly trained teachers from Sadhguru Gurukulam and are not taught merely for physical fitness and strength. 
+            They are a holistic process of naturally achieving mastery over the body and mind, so as to come to a state of health, joy, and bliss. 
+            The programs are an extensive exploration of hatha yoga and revive various dimensions of this ancient science that are largely absent in 
+            the world today.
+          </p>
+          <blockquote>
+            "Hatha yoga is not body-bending business.  It is about taking charge of the way you think, feel, and perceive life." — Sadhguru
+          </blockquote>
+        </section>
+        <section id="start" aria-labelledby="start-heading">
+          <h2 id="start-heading">Ready to Learn Hatha Yoga?</h2>
+          <p>
+            If you’re inspired to learn classical Hatha Yoga the way it was originally designed — 
+            join us at one of our programs.
+          </p>
+          <p>
+            <a href="https://isha.sadhguru.org/us/en/yoga-meditation/yoga-program-for-beginners/hatha-yoga" 
+            class="btn btn-primary">Find a Program</a>
+          </p> 
+          <p>
+            <a href="https://isha.sadhguru.org/us/en/yoga-meditation/yoga-program-for-beginners/hatha-yoga/courses-by-certified-teachers" 
+            class="btn btn-primary">Find a Certified Isha Hatha Yoga Teacher Near You</a>
+          </p>
+        </section>
+
+        <section id="programs" aria-labelledby="programs-heading">
+          <h2 id="programs-heading">Programs Offered</h2>
+          <p>
+            Isha Hatha Yoga encompasses five ancient and powerful practices that transform the body and mind into great possibilities.
+          </p>
+          <div class="carousel hatha-carousel" aria-label="Program gallery" role="region">
+            <button class="carousel-button prev" aria-label="Previous slide" type="button">‹</button>
+            <div class="carousel-track" role="listbox" aria-live="polite">
+              <div class="carousel-slide" role="option" aria-label="1 of 5">
+                <img src="https://i.postimg.cc/j2X2Hhb9/upa-yoga-matched.png" alt="Upa-yoga" data-desc="Upa-yoga is a set of 10 powerful practices that activate the joints, muscles and energy system, rejuvenating the entire system." />
+              </div>
+              <div class="carousel-slide" role="option" aria-label="2 of 5">
+                <img src="https://i.postimg.cc/gjjgvg9D/angamardhana.jpg" alt="Angamardana" data-desc="Angamardana is a series of 30 processes to invigorate the body and reach peak physical fitness and mental health." />
+              </div>
+              <div class="carousel-slide" role="option" aria-label="3 of 5">
+                <img src="https://i.postimg.cc/Z57X2vcg/suryakriya.jpg" alt="Surya Kriya" data-desc="Surya Kriya is a potent 21-step yogic practice of tremendous antiquity, designed as a holistic process for health, wellness, and complete wellbeing." />
+              </div>
+              <div class="carousel-slide" role="option" aria-label="4 of 5">
+                <img src="https://i.postimg.cc/2ScgMLwP/yogasanas.jpg" alt="Yogasanas" data-desc="Yogasanas are a set of powerful postures to elevate one’s consciousness, stabilize one’s mind, emotions and energy system, and decelerate the aging process." />
+              </div>
+              <div class="carousel-slide" role="option" aria-label="5 of 5">
+                <img src="https://i.postimg.cc/527DTQ3r/bhuta_shuddi.jpg" alt="Bhuta Shuddhi" data-desc="Bhuta Shuddhi is a process of purifying the five elements within the human system leading to harmony and balance." />
+              </div>
+            </div>
+            <button class="carousel-button next" aria-label="Next slide" type="button">›</button>
+          </div>
+          <p id="program-desc">
+            Isha Hatha Yoga encompasses five ancient and powerful practices that transform the body and mind into great possibilities.
+          </p>
+          <!-- details>
+            <summary>See a sample daily outline</summary>
+            <ul class="checklist">
+              <li><span class="checkbox checked">✓</span> Grounding and gentle warm‑ups</li>
+              <li><span class="checkbox"></span> Foundational standing postures</li>
+              <li><span class="checkbox"></span> Seated forward folds and twists</li>
+              <li><span class="checkbox"></span> Breath awareness and relaxation</li>
+            </ul>
+          </details -->
+        </section>
+
+        <section id="hytt" aria-labelledby="hytt-heading">
+          <h2 id="hytt-heading">Inspired To Offer Isha Hatha Yoga To The World?</h2>
+          <p>
+            If you feel drawn to share this transformative science with others, 
+            you can take the next step towards becoming a certified Isha Hatha Yoga teacher.
+          </p>
+          <p>
+            <a href="https://isha.sadhguru.org/in/en/yoga-meditation/yoga-teacher-training/hatha-yoga-teacher-training?" 
+            class="btn btn-primary">Learn About The Isha Hatha Yoga Teacher Training Program</a>
+          </p>
+          <!--pre><code>// Example: lightweight structure without frameworks
+&lt;section id="benefits"&gt;
+  &lt;h2&gt;Benefits&lt;/h2&gt;
+  &lt;p&gt;Clear, readable content with modular blocks.&lt;/p&gt;
+&lt;/section&gt;</code></pre -->
+        </section>
+
+        <section id="nextsteps" aria-labelledby="nextsteps-heading">
+          <h2 id="nextsteps-heading">Take the Next Step</h2>
+          <p>
+            Whether you wish to deepen your own practice or offer yoga to the world, there's a path waiting for you.
+            Each step brings you closer to a life of balance, clarity, and inner stillness.
+          </p>
+          <p>
+            <a href="https://online.sadhguru.org/event-register?event=request-a-webinar-10906" 
+            class="btn btn-primary">Fill out the Interest Form / Webinar Request</a>
+          </p>
+          <blockquote>
+            “If You Bring a Certain Stillness Into You, Activity Becomes an Effortless Process” — Sadhguru
+          </blockquote>
+          <!--div class="callout" role="note" aria-label="Callout">
+            <div class="callout-emoji" aria-hidden="true">🧭</div>
+            <div>
+              <strong>Navigation:</strong> Use the table of contents above to jump between sections.
+            </div>
+          </div -->
+        </section>
+
+        <hr class="divider" />
+
+        <!-- section id="faq" aria-labelledby="faq-heading">
+          <h2 id="faq-heading">FAQ</h2>
+          <details>
+            <summary>Do I need prior experience?</summary>
+            <p>No. A gentle, attentive approach works well for beginners and experienced practitioners alike.</p>
+          </details>
+          <details>
+            <summary>How often should I practice?</summary>
+            <p>Short, regular sessions (e.g., 20–40 minutes) often create more stability than occasional long ones.</p>
+          </details>
+          <details>
+            <summary>Can I use this layout for other topics?</summary>
+            <p>Yes. Replace the headings, text, and images while keeping the same structure and styles.</p>
+          </details>
+        </section -->
+      </article>
+
+      <footer class="page-footer" aria-label="Page footer">
+        <p>
+            © 1999 - 2025 Isha Foundation. All Rights Reserved.
+            <a href="https://innerengineering.sadhguru.org/policy/terms-and-conditions#terms-conditions">Terms of Use</a>
+            <a href="https://innerengineering.sadhguru.org/policy/terms-and-conditions#privacy">Privacy Policy</a>
+        </p>
+      </footer>
+    </main>
+    <script>
+      (function () {
+        const root = document.querySelector('.hatha-carousel');
+        if (!root) return;
+        const track = root.querySelector('.carousel-track');
+        const slides = Array.from(root.querySelectorAll('.carousel-slide'));
+        const prevBtn = root.querySelector('.carousel-button.prev');
+        const nextBtn = root.querySelector('.carousel-button.next');
+        const descEl = document.querySelector('#program-desc');
+
+        let index = 0;
+        let startX = 0;
+        let currentX = 0;
+        let isDown = false;
+
+        const clamp = (v) => Math.max(0, Math.min(v, slides.length - 1));
+        function updateDesc() {
+          if (!descEl) return;
+          const img = slides[index]?.querySelector('img');
+          const txt = img?.dataset?.desc || img?.alt || '';
+          descEl.textContent = txt;
+        }
+
+        function snap(i) {
+          index = clamp(i);
+          track.style.transition = 'transform 320ms ease';
+          track.style.transform = `translateX(${-index * 100}%)`;
+          updateDesc();
+        }
+
+        function begin(e) {
+          isDown = true;
+          startX = e.clientX ?? e.touches?.[0]?.clientX ?? 0;
+          currentX = startX;
+          track.style.transition = 'none';
+        }
+        function move(e) {
+          if (!isDown) return;
+          currentX = e.clientX ?? e.touches?.[0]?.clientX ?? startX;
+          const dx = currentX - startX;
+          track.style.transform = `translateX(calc(${-index * 100}% + ${dx}px))`;
+        }
+        function end() {
+          if (!isDown) return;
+          isDown = false;
+          const dx = (currentX || startX) - startX;
+          if (Math.abs(dx) > 50) {
+            snap(index + (dx < 0 ? 1 : -1));
+          } else {
+            snap(index);
+          }
+        }
+
+        prevBtn?.addEventListener('click', () => snap(index - 1));
+        nextBtn?.addEventListener('click', () => snap(index + 1));
+
+        track.addEventListener('pointerdown', (e) => {
+          track.setPointerCapture(e.pointerId);
+          begin(e);
+        });
+        track.addEventListener('pointermove', move);
+        track.addEventListener('pointerup', end);
+        track.addEventListener('pointercancel', end);
+        track.addEventListener('pointerleave', end);
+
+        // Touch support (Safari)
+        track.addEventListener('touchstart', begin, { passive: true });
+        track.addEventListener('touchmove', move, { passive: true });
+        track.addEventListener('touchend', end, { passive: true });
+
+        // Keyboard navigation
+        root.setAttribute('tabindex', '0');
+        root.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowLeft') snap(index - 1);
+          if (e.key === 'ArrowRight') snap(index + 1);
+        });
+
+        snap(0);
+      })();
+    </script>
+  </body>
+</html>
+
+
+
+
